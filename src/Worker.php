@@ -4,16 +4,14 @@ class Worker {
 
   function work($n)
   {
-    if($n == 1)
-      return 'I';
+    $s = '';
 
-    if($n == 2)
-      return 'II';
-
-    if($n == 4)
-      return 'IV';
-
-    return 'III';
+    if($n <= 3)
+      for($i = 0; $i < $n; $i++) { $s .= 'I'; }
+    else
+      $s = 'IV';
+    
+    return $s;
   }
 
 }
