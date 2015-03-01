@@ -6,21 +6,23 @@ class Worker {
   {
     if($n >= 1 && $n <= 3)
       return $this->workWithAPivot($n, 0, '');
-    
-    // $n+1 mod 5 = 1 ---> dispari
-    if($n >= 4 && $n <= 8)
+
+    $nPlusOneDividedBy5 = floor(($n+1) / 5);
+
+    // $n+1 div 5 = 1 ---> dispari
+    if($nPlusOneDividedBy5 == 1)
       return $this->workWithAPivot($n, 5, 'V');
 
-    // $n+1 mod 5 = 2 ---> pari
-    if($n >= 9 && $n <= 13)
+    // $n+1 div 5 = 2 ---> pari
+    if($nPlusOneDividedBy5 == 2)
       return $this->workWithAPivot($n, 10, 'X');
 
-    // $n+1 mod 5 = 3 ---> dispari
-    if($n >= 14 && $n <= 18)
+    // $n+1 div 5 = 3 ---> dispari
+    if($nPlusOneDividedBy5 == 3)
       return 'X' . $this->workWithAPivot($n, 15, 'V');
 
-    // $n+1 mod 5 = 4 --> pari
-    if($n >= 19 && $n <= 20)
+    // $n+1 div 5 = 4 --> pari
+    if($nPlusOneDividedBy5 == 4)
       return 'X' . $this->workWithAPivot($n, 20, 'X');
   }
 
