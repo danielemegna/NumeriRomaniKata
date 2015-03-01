@@ -10,6 +10,9 @@ class Worker {
     if($n == 2)
       return 'II';
 
+    if($n == 4)
+      return 'IV';
+
     return 'III';
   }
 

@@ -25,12 +25,17 @@ class WorkerTest extends PHPUnit_Framework_TestCase
   function testTwoAndThreeShouldReturnCorrectRappresentation()
   {
     $w = new Worker();
-    $s = 
 
     $this->assertEquals('II', $w->work(2));
     $this->assertEquals('III', $w->work(3));
   }
 
+  function testFourShouldReturnIV()
+  {
+    $w = new Worker();
+
+    $this->assertEquals('IV', $w->work(4));
+  }
 }
 
 
