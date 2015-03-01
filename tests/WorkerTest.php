@@ -38,6 +38,16 @@ class WorkerTest extends PHPUnit_Framework_TestCase
   {
     $this->assertEquals('IV', $this->w->work(4));
   }
+
+  function testFirstTenNumbers()
+  {
+    $this->assertEquals('V', $this->w->work(5));
+    $this->assertEquals('VI', $this->w->work(6));
+    $this->assertEquals('VII', $this->w->work(7));
+    $this->assertEquals('VIII', $this->w->work(8));
+    $this->assertEquals('IX', $this->w->work(9));
+    $this->assertEquals('X', $this->w->work(10));
+  }
 }
 
 
