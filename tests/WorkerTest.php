@@ -4,6 +4,13 @@ require_once __DIR__.'/../src/Worker.php';
 
 class WorkerTest extends PHPUnit_Framework_TestCase
 {
+  private $w;
+
+  function setUp()
+  {
+    $this->w = new Worker();
+  }
+
   function testTrueIsTrue()
   {
     $this->assertTrue(true);
@@ -16,25 +23,22 @@ class WorkerTest extends PHPUnit_Framework_TestCase
 
   function testOneShouldReturnI()
   {
-    $w = new Worker();
-    $s = $w->work(1);
+    $s = $this->w->work(1);
 
     $this->assertEquals('I', $s);
   }
 
   function testTwoAndThreeShouldReturnCorrectRappresentation()
   {
-    $w = new Worker();
-
-    $this->assertEquals('II', $w->work(2));
-    $this->assertEquals('III', $w->work(3));
+    $this->assertEquals('II', $this->w->work(2));
+    $this->assertEquals('III', $this->w->work(3));
   }
 
   function testFourShouldReturnIV()
   {
     $w = new Worker();
 
-    $this->assertEquals('IV', $w->work(4));
+    $this->assertEquals('IV', $this->w->work(4));
   }
 }
 
