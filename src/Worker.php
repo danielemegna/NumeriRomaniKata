@@ -6,28 +6,27 @@ class Worker {
   {
     $s = '';
 
-    if($n >= 1 && $n <= 3) {
-      $s = '';
-      while($n-- > 0) { $s .= 'I'; }
-    }
-
-    else if($n == 4)
-      $s = 'IV';
-      
-    else if($n == 5)
-      $s = 'V';
-
-    else if($n >= 6 && $n <= 8) {
-      $s = 'V';
-      while($n-- > 5) { $s .= 'I'; }
-    }
-
-    else if($n == 9)
-      $s = 'IX';
-
-    else if($n == 10)
-      $s = 'X';
+    if($n >= 1 && $n <= 3)
+      return $this->workWithAPivot($n, 0, '');
     
+    if($n >= 4 && $n <= 8)
+      return $this->workWithAPivot($n, 5, 'V');
+
+    if($n >= 9)
+      return $this->workWithAPivot($n, 10, 'X');
+  }
+
+  function workWithAPivot($n, $pivotValue, $pivotRappresentation)
+  {
+    if($n < $pivotValue)
+      return 'I' . $pivotRappresentation;
+      
+    if($n == $pivotValue)
+      return $pivotRappresentation;
+
+    $s = $pivotRappresentation;
+    while($n-- > $pivotValue) { $s .= 'I'; }
+
     return $s;
   }
 
