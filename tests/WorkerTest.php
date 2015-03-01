@@ -36,8 +36,6 @@ class WorkerTest extends PHPUnit_Framework_TestCase
 
   function testFourShouldReturnIV()
   {
-    $w = new Worker();
-
     $this->assertEquals('IV', $this->w->work(4));
   }
 }
