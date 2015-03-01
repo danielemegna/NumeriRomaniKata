@@ -4,8 +4,6 @@ class Worker {
 
   function work($n)
   {
-    $s = '';
-
     if($n >= 1 && $n <= 3)
       return $this->workWithAPivot($n, 0, '');
     
