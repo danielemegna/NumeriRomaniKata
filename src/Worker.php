@@ -43,11 +43,11 @@ class Worker {
 
     // $n+1 div 5 = 9 --> odd
     if($nPlusOneDividedBy5 == 9)
-      return 'XXXX' . $this->workWithAPivot($n, 45, 'V');
+      return 'XL' . $this->workWithAPivot($n, 45, 'V');
 
     // $n+1 div 5 = 10 --> even
     if($nPlusOneDividedBy5 == 10)
-      return 'L';
+      return $this->workWithAPivot($n, 50, 'L');
   }
 
   function workWithAPivot($n, $pivotValue, $pivotRappresentation)
