@@ -76,6 +76,14 @@ class WorkerTest extends PHPUnit_Framework_TestCase
     $this->assertEquals('XXIX', $this->w->work(29));
     $this->assertEquals('XXX', $this->w->work(30));
   }
+
+  function testSomeThirtyAndJumpToFifty()
+  {
+    $this->assertEquals('XXXV', $this->w->work(35));
+    $this->assertEquals('XXXVIII', $this->w->work(38));
+    $this->assertEquals('XXXIX', $this->w->work(39));
+    $this->assertEquals('L', $this->w->work(50));
+  }
 }
 
 

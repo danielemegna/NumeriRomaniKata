@@ -16,7 +16,11 @@ class Worker {
     if($pivotValue > 10)
       $prefix = $this->work($isFloorOdd ? $pivotValue-5 : $pivotValue-10);
 
-    return $prefix . $this->workWithAPivot($n, $pivotValue, $pivotRappresentation);
+    $result = $prefix . $this->workWithAPivot($n, $pivotValue, $pivotRappresentation);
+    if($result == 'XXXXX')
+      $result = 'L';
+
+    return $result;
   }
 
   function workWithAPivot($n, $pivotValue, $pivotRappresentation)
