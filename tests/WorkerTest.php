@@ -39,7 +39,7 @@ class WorkerTest extends PHPUnit_Framework_TestCase
     $this->assertEquals('IV', $this->w->work(4));
   }
 
-  function testFirstTenNumbersShouldBeConvertedProperly()
+  function testFromFiveToTenShouldReturnCorrectRappresentation()
   {
     $this->assertEquals('V', $this->w->work(5));
     $this->assertEquals('VI', $this->w->work(6));
@@ -61,6 +61,20 @@ class WorkerTest extends PHPUnit_Framework_TestCase
     $this->assertEquals('XVIII', $this->w->work(18));
     $this->assertEquals('XIX', $this->w->work(19));
     $this->assertEquals('XX', $this->w->work(20));
+  }
+
+  function testFromTwentyoneToThirty()
+  {
+    $this->assertEquals('XXI', $this->w->work(21));
+    $this->assertEquals('XXII', $this->w->work(22));
+    $this->assertEquals('XXIII', $this->w->work(23));
+    $this->assertEquals('XXIV', $this->w->work(24));
+    $this->assertEquals('XXV', $this->w->work(25));
+    $this->assertEquals('XXVI', $this->w->work(26));
+    $this->assertEquals('XXVII', $this->w->work(27));
+    $this->assertEquals('XXVIII', $this->w->work(28));
+    $this->assertEquals('XXIX', $this->w->work(29));
+    $this->assertEquals('XXX', $this->w->work(30));
   }
 }
 

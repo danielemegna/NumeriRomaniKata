@@ -24,6 +24,15 @@ class Worker {
     // $n+1 div 5 = 4 --> pari
     if($nPlusOneDividedBy5 == 4)
       return 'X' . $this->workWithAPivot($n, 20, 'X');
+
+    // $n+1 div 5 = 5 --> dispari
+    if($nPlusOneDividedBy5 == 5)
+      return 'XX' . $this->workWithAPivot($n, 25, 'V');
+
+    // $n+1 div 5 = 6 --> pari
+    if($nPlusOneDividedBy5 == 6)
+      return 'XX' . $this->workWithAPivot($n, 30, 'X');
+
   }
 
   function workWithAPivot($n, $pivotValue, $pivotRappresentation)
